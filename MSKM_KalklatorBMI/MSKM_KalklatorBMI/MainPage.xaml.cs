@@ -14,5 +14,15 @@ namespace MSKM_KalklatorBMI
         {
             InitializeComponent();
         }
+
+        private void Zapisz_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ZobaczDane_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

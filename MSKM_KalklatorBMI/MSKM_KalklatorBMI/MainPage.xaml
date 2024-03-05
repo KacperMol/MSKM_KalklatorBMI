@@ -21,6 +21,23 @@
                 <Entry Grid.Row="1" Grid.Column="1"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="150"/>
             </Grid>
         </StackLayout>
+        <StackLayout Padding="0,0,0,10">
+            <Label Text="Ile masz wzrost?" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding Source={x:Reference HeightSlider}, Path=Value, StringFormat='{0:F0 cm}'}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Slider x:Name="HeightSlider" Minimum="100" Maximum="205" Value="{Binding Height}" HorizontalOptions="Center" VerticalOptions="Center" ThumbColor="Green" BackgroundColor="Blue"/>
+        </StackLayout>
+        <StackLayout Padding="0,0,0,10">
+            <Label Text="Ile ważysz?" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding Source={x:Reference WeightSlider}, Path=Value, StringFormat='{0:F0 kg}'}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Slider x:Name="WeightSlider" Minimum="50" Maximum="160" Value="{Binding Weight}" HorizontalOptions="Center" VerticalOptions="Center" ThumbColor="Green" BackgroundColor="Blue"/>
+        </StackLayout>
+        <StackLayout Padding="0,0,0,10">
+            <Label Text="Twoje BMI wynosi: " FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Text="{Binding Bmi}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40" TextColor="Orange"/>
+            <Label Text="{Binding Classification}" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
+        <Button Text="Zapisz" Clicked="Zapisz_Clicked" FontSize="25" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Margin="5" BackgroundColor="LightBlue" CornerRadius="15"/>
+        <Button Text="Zobacz dane" Clicked="ZobaczDane_Clicked" FontSize="25" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" BackgroundColor="LightBlue" CornerRadius="15"/>
     </StackLayout>
 
 </ContentPage>
