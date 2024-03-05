@@ -37,7 +37,7 @@ namespace MSKM_KalklatorBMI
 
         private void ZobaczDane_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new DanePage());
         }
     }
 }
