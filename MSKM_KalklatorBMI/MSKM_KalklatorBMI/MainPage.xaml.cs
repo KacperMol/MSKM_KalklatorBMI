@@ -16,8 +16,22 @@ namespace MSKM_KalklatorBMI
             BindingContext = new MainPageViewModel();
         }
 
-        private void Zapisz_Clicked(object sender, EventArgs e)
+        private async void Zapisz_Clicked(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(imietxt.Text) && !string.IsNullOrWhiteSpace(nazwiskotxt.Text))
+            {
+                await App.Database.ZapiszUzytkownikaAsync(new Uzytkownik
+                {
+                    Imie = imietxt.Text,
+                    Nazwisko = nazwiskotxt.Text,
+                    BMI = double.Parse(BMI.Text),
+                });
+                imietxt.Text = nazwiskotxt.Text = string.Empty;
+                await DisplayAlert("Sukces", "Dodano dane do bazy", "OK");
+
+            }
+            else
+                await DisplayAlert("Blad", "Wpisz imie i nazwisko", "OK");
 
         }
 
