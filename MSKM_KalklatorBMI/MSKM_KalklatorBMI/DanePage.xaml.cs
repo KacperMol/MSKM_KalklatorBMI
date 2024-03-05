@@ -16,5 +16,15 @@ namespace MSKM_KalklatorBMI
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            listaBMI.ItemsSource = await App.Database.WyswietlUzytkownikaAsync();
+        }
+
+        private void Wroc_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }
