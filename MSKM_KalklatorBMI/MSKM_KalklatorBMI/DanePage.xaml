@@ -49,7 +49,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+            <Button Text="Wróc" Clicked="Wroc_Clicked" VerticalOptions="EndAndExpand" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
