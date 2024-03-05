@@ -13,6 +13,7 @@ namespace MSKM_KalklatorBMI
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageViewModel();
         }
     }
 }
