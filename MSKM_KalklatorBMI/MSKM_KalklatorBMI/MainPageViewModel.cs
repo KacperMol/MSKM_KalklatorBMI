@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLitePCL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -17,7 +18,8 @@ namespace MSKM_KalklatorBMI
             get => height;
             set
             {
-                height = value;
+                
+                height = NextStep(value);
                 UpdateResults();
             }
         }
