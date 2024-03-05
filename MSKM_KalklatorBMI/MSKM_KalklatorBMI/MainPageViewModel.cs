@@ -7,7 +7,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace MSKM_KalklatorBMI
 {
-    internal class MainPageViewModel
+    internal class MainPageViewModel : INotifyPropertyChanged
     {
         public double height = 170;
         public double weight = 60;
@@ -28,12 +28,12 @@ namespace MSKM_KalklatorBMI
             get => weight;
             set
             {
-                weight = value;
+                weight = NextStep(value);
                 UpdateResults();
             }
         }
         public double Bmi
-            => Math.Round(Weight / Math.Pow(height / 100, 2), 2);
+            => Math.Round(Weight / Math.Pow(Height / 100, 2), 2);
         public string Classification
         {
             get

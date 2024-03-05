@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MSKM_KalklatorBMI.MainPage">
+             x:Class="MSKM_KalklatorBMI.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
         <StackLayout Padding="0,0,0,10">
@@ -24,12 +25,12 @@
         <StackLayout Padding="0,0,0,10">
             <Label Text="Ile masz wzrost?" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label Text="{Binding Source={x:Reference HeightSlider}, Path=Value, StringFormat='{0:F0} cm'}" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Slider x:Name="HeightSlider" Minimum="100" Maximum="205" Value="{Binding Height}" HorizontalOptions="Center" VerticalOptions="Center" ThumbColor="Green" BackgroundColor="Blue"/>
+            <Slider x:Name="HeightSlider" Minimum="100" Maximum="205" Value="{Binding Height}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" ThumbColor="Green" BackgroundColor="Blue"/>
         </StackLayout>
         <StackLayout Padding="0,0,0,10">
             <Label Text="Ile ważysz?" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label Text="{Binding Source={x:Reference WeightSlider}, Path=Value, StringFormat='{0:F0} kg'}" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <Slider x:Name="WeightSlider" Minimum="80" Maximum="160" Value="{Binding Weight}" HorizontalOptions="Center" VerticalOptions="Center" ThumbColor="Green" BackgroundColor="Blue"/>
+            <Slider x:Name="WeightSlider" Minimum="50" Maximum="150" Value="{Binding Weight}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" ThumbColor="Green" BackgroundColor="Blue"/>
         </StackLayout>
         <StackLayout Padding="0,0,0,10">
             <Label Text="Twoje BMI wynosi: " FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"/>
